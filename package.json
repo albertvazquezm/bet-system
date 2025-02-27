@@ -1,0 +1,20 @@
+{
+  "name": "bet-system",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Albert Vazquez",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn workspace @bet-system/api start",
+    "db:migrate": "yarn workspace @bet-system/api db:migrate",
+    "db:seed": "yarn workspace @bet-system/api db:seed",
+    "dev": "yarn workspace @bet-system/api dev"
+  },
+  "dependencies": {
+    
+  }
+}
