@@ -20,3 +20,6 @@ coverage/
 *.swp
 *.swo
 .DS_Store
+
+# Next.js
+.next/

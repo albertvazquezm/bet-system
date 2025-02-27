@@ -9,12 +9,14 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "yarn workspace @bet-system/api start",
-    "db:migrate": "yarn workspace @bet-system/api db:migrate",
-    "db:seed": "yarn workspace @bet-system/api db:seed",
-    "dev": "yarn workspace @bet-system/api dev"
+    "db:migrate": "npm run --workspace=@bet-system/api db:migrate",
+    "db:seed": "npm run --workspace=@bet-system/api db:seed",
+    "dev:api": "npm run --workspace=@bet-system/api dev",
+    "dev:app": "npm run --workspace=@bet-system/app dev",
+    "dev:all": "concurrently \"npm run dev:api\" \"npm run dev:app\""
   },
-  "dependencies": {
-    
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^9.1.2"
   }
 }
