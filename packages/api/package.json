@@ -14,12 +14,14 @@
     "db:seed:undo": "sequelize-cli db:seed:undo:all"
   },
   "dependencies": {
+    "@bet-system/dto": "1.0.0",
     "@types/pg": "^8.11.11",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "http-errors": "^2.0.0",
+    "module-alias": "^2.2.3",
     "morgan": "^1.10.0",
     "pg": "^8.13.3",
     "pg-hstore": "^2.3.4",

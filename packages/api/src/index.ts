@@ -7,6 +7,7 @@ import { errorHandler } from './middleware/errorHandler';
 import sportEventRoutes from './modules/sport-event/sport-event.routes';
 import { sequelizeService } from './modules/common/sequelize.service';
 import { config } from './config';
+import { LogLevel, logService } from './modules/common/log.service';
 
 // Load environment variables
 dotenvConfig();
@@ -27,9 +28,18 @@ app.use(sportEventRoutes);
 app.use(errorHandler);
 
 app.listen(port, async () => {
-  await Promise.all([
-    config.env === 'dev' ? sequelizeService.getInstance().sync() : null,
-  ]);
+  // Application prerequisites
+  try {
+    await sequelizeService.checkConnection();
+  } catch (error) {
+    logService.log({
+      level: LogLevel.ERROR,
+      message: 'Could not resolve application prerequisites',
+      error: error,
+    });
+    process.exit(1);
+  }
+  
   console.log(`Server is running on port ${port}`);
 });
 

@@ -9,6 +9,13 @@ export const CreateSportEventSchema = z.object({
 // Schema for updating an existing sport event
 export const UpdateSportEventSchema = CreateSportEventSchema.partial();
 
+// Schema for creating a new sport event bet
+export const CreateSportEventBetSchema = z.object({
+    sport_event_id: z.number().min(1, 'Sport event ID is required'),
+    bet_amount: z.number().min(0, 'Bet amount must be a positive number'),
+});
+
 // Infer types from the schemas
 export type CreateSportEventDto = z.infer<typeof CreateSportEventSchema>;
 export type UpdateSportEventDto = z.infer<typeof UpdateSportEventSchema>;
+export type CreateSportEventBetDto = z.infer<typeof CreateSportEventBetSchema>;

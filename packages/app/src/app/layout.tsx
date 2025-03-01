@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import { Providers } from "./providers";
+import { Toaster } from "sonner";
 
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` antialiased`}
+        className={`antialiased`}
       >
         <div className="flex flex-col h-screen">
           <Providers>
@@ -26,6 +27,7 @@ export default function RootLayout({
               <div className="max-w-7xl mx-auto px-4 py-6">
                 {children}
               </div>
+              <Toaster />
             </main>
           </Providers>
         </div>

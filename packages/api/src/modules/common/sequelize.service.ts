@@ -24,23 +24,8 @@ export class SequelizeService {
     return this.sequelize;
   }
 
-  isConnected() {
-    return this.sequelize.authenticate()
-      .then(() => {
-        logService.log({
-          level: LogLevel.INFO,
-          message: 'Connection has been established successfully.',
-        });
-        return true;
-      })
-      .catch((err) => {
-        logService.log({
-          level: LogLevel.ERROR,
-          message: 'Unable to connect to the database:',
-          error: err,
-        });
-        return false;
-      });
+  checkConnection() {
+    return this.sequelize.authenticate();
   }
 }
 

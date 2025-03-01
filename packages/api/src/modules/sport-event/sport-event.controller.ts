@@ -1,8 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import { SportEvent } from './sport-event.model';
-import { CreateSportEventSchema, UpdateSportEventSchema } from './sport-event.dto';
 import { asyncHandler } from '../common/common.utils';
 import createHttpError from 'http-errors';
+import { SportEventBet } from './sport-event-bet.model';
+import { CreateSportEventBetSchema, CreateSportEventSchema, UpdateSportEventSchema } from '@bet-system/dto';
 
 export class SportEventController {
   getAllSportEvents = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
@@ -43,5 +44,11 @@ export class SportEventController {
       throw createHttpError.NotFound(`Sport event ${id} not found`);
     }
     res.status(200).json({ message: `Sport event ${id} deleted` });
+  });
+
+  createSportEventBet = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+    const sportEventBetData = CreateSportEventBetSchema.parse(req.body);
+    const sportEventBet = await SportEventBet.create(sportEventBetData);
+    res.status(201).json(sportEventBet);
   });
 } 

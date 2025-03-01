@@ -11,5 +11,6 @@ router.get(`${basePath}/:id`, sportEventController.getSportEventById);
 router.post(basePath, sportEventController.createSportEvent);
 router.put(`${basePath}/:id`, sportEventController.updateSportEvent);
 router.delete(`${basePath}/:id`, sportEventController.deleteSportEvent);
+router.post(`${basePath}/bets`, sportEventController.createSportEventBet);
 
 export default router; 
