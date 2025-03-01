@@ -1,21 +1,17 @@
 import { CreateSportEventBetDto } from '@bet-system/dto';
+import { apiFetcher } from './api-fetcher';
+
 export const getSportEvents = async () => {
-    const response = await fetch('http://localhost:4000/sport-events', {
+    const response = await apiFetcher('/sport-events', {
         method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
     });
-    return response.json();
+    return response;
 };
 
 export const createSportEventBet = async (data: CreateSportEventBetDto) => {
-    const response = await fetch('http://localhost:4000/sport-events/bets', {
+    const response = await apiFetcher('/sport-events/bets', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
         body: JSON.stringify(data),
     });
-    return response.json();
+    return response;
 };
