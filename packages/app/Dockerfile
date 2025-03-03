@@ -15,6 +15,9 @@ RUN npm ci
 COPY packages/dto ./packages/dto
 COPY packages/app ./packages/app
 
+# ENV (update for prod deployment)
+ENV NEXT_PUBLIC_BASE_API_URL=http://localhost:4000/api
+
 # Build the application
 RUN npm run --workspace=@bet-system/dto build && \
     npm run --workspace=@bet-system/app build

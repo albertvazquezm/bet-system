@@ -39,23 +39,22 @@ COPY --from=builder /app/packages/api/dist ./packages/api/dist
 COPY --from=builder /app/packages/dto/dist ./packages/dto/dist
 
 # Copy necessary configuration files
-COPY packages/api/.env ./packages/api/.env
 COPY packages/api/sequelize.config.js ./packages/api/
 COPY packages/api/.sequelizerc ./packages/api/
 
 # Set environment variables
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=4000
 
 # Create a non-root user
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 USER appuser
 
 # Expose the port
-EXPOSE 3000
+EXPOSE 4000
 
 # Set the working directory to the api package
 WORKDIR /app/packages/api
 
 # Start the application
-CMD ["node", "dist/index.js"] 
+CMD ["npm", "run", "start:pm2"] 

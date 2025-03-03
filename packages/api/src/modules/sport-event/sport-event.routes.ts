@@ -4,7 +4,7 @@ import { SportEventController } from './sport-event.controller';
 const router = Router();
 const sportEventController = new SportEventController();
 
-export const basePath = '/sport-events';
+export const basePath = '/api/sport-events';
 
 router.get(basePath, sportEventController.getAllSportEvents);
 router.get(`${basePath}/:id`, sportEventController.getSportEventById);
