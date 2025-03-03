@@ -14,7 +14,8 @@
     "dev:api": "npm run --workspace=@bet-system/api dev",
     "dev:app": "npm run --workspace=@bet-system/app dev",
     "dev:dto": "npm run --workspace=@bet-system/dto build:watch",
-    "dev:all": "concurrently \"npm run dev:api\" \"npm run dev:app\" \"npm run dev:dto\""
+    "dev:all": "concurrently \"npm run dev:api\" \"npm run dev:app\" \"npm run dev:dto\"",
+    "test:api": "npm run --workspace=@bet-system/api test"
   },
   "dependencies": {},
   "devDependencies": {

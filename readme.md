@@ -16,6 +16,9 @@ The rest of the features required for the project are implemented.
 - [x] Shared DTO package with zod schemas and types, to allow filter implementation and typescript support on App and API.
 - [x] Mobile responsive design (basic implementation)
 - [x] Dockerfiles for production deployment of API and APP
+- [x] Basic unit tests using Jest for API controllers
+- [x] APP request caching using react query
+- [x] Postman collection for Events CRUD operations
 
 ## Setup
 
@@ -29,20 +32,6 @@ Run the API, App and DTO package in development mode:
 
 ```bash
 npm run dev:all
-```
-
-Run the API in development mode:
-(Remember to have a DB running and the DTO package built)
-
-```bash
-npm run dev:api
-```
-
-Run the app in development mode:
-(Remember to have the DTO package built)
-
-```bash
-npm run dev:app
 ```
 
 ## Production
@@ -67,6 +56,6 @@ docker run -p 3000:3000 betting-system-app
 ## Missing Features
 
 - [ ] Authentication and security
-- [ ] Unit and end to end tests
-- [ ] Better SSR support for the frontend
+- [ ] Increase unit test coverage and include end to end tests
+- [ ] Better SSR support for the frontend (react query)
 - [ ] Modal URLs don't support refresh (some config would be needed to support it)
