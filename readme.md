@@ -28,6 +28,34 @@ npm install
 
 ## Development
 
+Run npm install in the root to install all dependencies.
+
+```bash
+npm install
+```
+
+### Configuration
+
+Copy the .env.example file to .env and set the correct environment variables for the API and APP.
+
+```bash
+cp .env.example .env
+```
+
+### DB
+
+To run a local instance of postgres, you can use the following command:
+
+```bash
+docker run --name betting-system-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+```
+
+
+
+
+
+
+
 Run the API, App and DTO package in development mode:
 
 ```bash
