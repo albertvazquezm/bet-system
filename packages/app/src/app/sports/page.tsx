@@ -13,7 +13,6 @@ export default function Sports() {
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-2xl font-bold">Sport events</h1>
             </div>
-
             <Table>
                 <TableHeader>
                     <TableRow>
@@ -24,8 +23,7 @@ export default function Sports() {
                 </TableHeader>
                 <TableBody>
                     {
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        data?.map((events: any) => (
+                        data?.map((events) => (
                             <TableRow key={events.event_id}>
                                 <TableCell>{events.event_name}</TableCell>
                                 <TableCell>{events.odds}</TableCell>

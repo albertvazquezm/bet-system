@@ -1,8 +1,8 @@
-import { CreateSportEventBetDto } from '@bet-system/dto';
+import { CreateSportEventBetDto, GetAllSportEventsDto } from '@bet-system/dto';
 import { apiFetcher } from './api-fetcher';
 
 export const getSportEvents = async () => {
-    const response = await apiFetcher('/sport-events', {
+    const response = await apiFetcher<GetAllSportEventsDto>('/sport-events', {
         method: 'GET',
     });
     return response;

@@ -19,3 +19,13 @@ export const CreateSportEventBetSchema = z.object({
 export type CreateSportEventDto = z.infer<typeof CreateSportEventSchema>;
 export type UpdateSportEventDto = z.infer<typeof UpdateSportEventSchema>;
 export type CreateSportEventBetDto = z.infer<typeof CreateSportEventBetSchema>;
+
+export type SportEventDto = {
+    event_id: number;
+    event_name: string;
+    odds: number;
+    created_at: Date;
+    updated_at: Date;
+};
+
+export type GetAllSportEventsDto = SportEventDto[]
