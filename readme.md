@@ -44,18 +44,28 @@ cp .env.example .env
 
 ### DB
 
-To run a local instance of postgres, you can use the following command:
+1. To run a local instance of postgres, you can use the following command:
 
 ```bash
 docker run --name betting-system-postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
 ```
 
+2. Create the DB bet_system on your local postgres instance.
+
+3. Run the following command to run the migrations:
+
+```bash
+npm run db:migrate
+```
+
+4. Run the following command to seed the DB:
+
+```bash
+npm run db:seed
+```
 
 
-
-
-
-
+### Running the application
 Run the API, App and DTO package in development mode:
 
 ```bash
@@ -87,3 +97,7 @@ docker run -p 3000:3000 betting-system-app
 - [ ] Increase unit test coverage and include end to end tests
 - [ ] Better SSR support for the frontend (react query)
 - [ ] Modal URLs don't support refresh (some config would be needed to support it)
+
+## Need help?
+
+Get in touch at hola@albertvazquez.es.
