@@ -10,6 +10,7 @@ The rest of the features required for the project are implemented.
 
 - [x] DB Seeding
 - [x] CRUD API for events under /api/events with validation using Zod
+- [x] Connection pooling for DB and reconnection logic managed by Sequelize
 - [x] Basic logging system on the API, including winston abstraction and request error logs.
 - [x] NextJS app to list events and place bets (using Next parallel routes for UX)
 - [x] Comprehensive error handling on App: Error toast for common errors and a custom error boundary with request retry functionality.
